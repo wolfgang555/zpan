@@ -8,19 +8,24 @@ binding = "ASSETS"
 not_found_handling = "single-page-application"
 run_worker_first = ["/api", "/api/*", "/.well-known/*", "/dav", "/dav/*", "/ih/*", "/r/*", "/s/*"]
 
+# ----------------------------------------------------------------------------
+# Self-hosted fork deployment: the resource IDs below originally belonged to the
+# upstream saltbo account and MUST be replaced with your own before deploying.
+# Create each resource in YOUR Cloudflare account, then paste its ID here.
+# ----------------------------------------------------------------------------
 [[d1_databases]]
 binding = "DB"
 database_name = "zpan-db"
-database_id = "5bd64957-fa49-4da0-8b7b-6e0ad84037e7"
+database_id = "<PASTE_YOUR_D1_DATABASE_ID>"
 migrations_dir = "./migrations"
 
 [[kv_namespaces]]
 binding = "CACHE_KV"
-id = "2721f9d7b47d433d8a0e02171e276f57"
+id = "<PASTE_YOUR_KV_NAMESPACE_ID>"
 
 [[ratelimits]]
 name = "WEBDAV_RATE_LIMITER"
-namespace_id = "2801"
+namespace_id = "<PASTE_YOUR_RATE_LIMIT_NAMESPACE_ID>"
 
 [ratelimits.simple]
 limit = 3600
