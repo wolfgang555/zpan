@@ -16,16 +16,16 @@ run_worker_first = ["/api", "/api/*", "/.well-known/*", "/dav", "/dav/*", "/ih/*
 [[d1_databases]]
 binding = "DB"
 database_name = "zpan-db"
-database_id = "<PASTE_YOUR_D1_DATABASE_ID>"
+database_id = "5a309b55-c83d-429f-86a5-a601646bf74b"
 migrations_dir = "./migrations"
 
 [[kv_namespaces]]
 binding = "CACHE_KV"
-id = "<PASTE_YOUR_KV_NAMESPACE_ID>"
+id = "603659afcaa740dcae6285b6966a2f03"
 
 [[ratelimits]]
 name = "WEBDAV_RATE_LIMITER"
-namespace_id = "<PASTE_YOUR_RATE_LIMIT_NAMESPACE_ID>"
+namespace_id = "1001"
 
 [ratelimits.simple]
 limit = 3600
